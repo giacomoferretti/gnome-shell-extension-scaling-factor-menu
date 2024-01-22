@@ -1,0 +1,6 @@
+{
+  "name": "Scaling Factor Selector",
+  "description": "Add selector for Scaling Factor in system menu",
+  "uuid": "scaling-factor-menu@giacomoferretti.com",
+  "shell-version": ["45"]
+}

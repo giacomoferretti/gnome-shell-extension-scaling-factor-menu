@@ -42,6 +42,12 @@ const ScalingFactorMenuToggle = GObject.registerClass(
         schema_id: SCHEMA_ID,
       });
 
+      // Get current factor
+      const currentFactor = this._settings.get_double(
+        SCHEMA_KEY_TEXT_SCALING_FACTOR
+      );
+      this._updateLabels(currentFactor);
+
       // Since this "toggle" menu isn't being used as a toggle button
       // clicking should just open the menu.
       this.connect("clicked", () => {
@@ -60,9 +66,6 @@ const ScalingFactorMenuToggle = GObject.registerClass(
         this.menu.addMenuItem(item);
 
         // Check current factor
-        const currentFactor = this._settings.get_double(
-          SCHEMA_KEY_TEXT_SCALING_FACTOR
-        );
         item.setOrnament(
           factor === currentFactor
             ? PopupMenu.Ornament.CHECK
@@ -77,6 +80,8 @@ const ScalingFactorMenuToggle = GObject.registerClass(
         "changed::text-scaling-factor",
         (settings, key) => {
           const factor = settings.get_double(key);
+          this._updateLabels(factor);
+
           this._profileItems.forEach((item, key) => {
             item.setOrnament(
               key === factor
@@ -86,6 +91,14 @@ const ScalingFactorMenuToggle = GObject.registerClass(
           });
         }
       );
+    }
+
+    _updateLabels(factor) {
+      // Update subtitle
+      this.set({ subtitle: factor.toFixed(2) });
+
+      // Update checked
+      this.checked = factor !== 1;
     }
   }
 );

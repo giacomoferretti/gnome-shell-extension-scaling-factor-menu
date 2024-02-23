@@ -2,5 +2,6 @@
   "name": "Scaling Factor Selector",
   "description": "Add selector for Scaling Factor in system menu",
   "uuid": "scaling-factor-menu@giacomoferretti.com",
-  "shell-version": ["45"]
+  "shell-version": ["45"],
+  "url": "https://github.com/giacomoferretti/gnome-shell-extension-scaling-factor-menu",
 }

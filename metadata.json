@@ -4,4 +4,6 @@
   "uuid": "scaling-factor-menu@giacomoferretti.com",
   "shell-version": ["45"],
   "url": "https://github.com/giacomoferretti/gnome-shell-extension-scaling-factor-menu",
+  "gettext-domain": "scaling-factor-menu@giacomoferretti.com",
+  "settings-schema": "org.gnome.shell.extensions.scaling-factor-menu"
 }

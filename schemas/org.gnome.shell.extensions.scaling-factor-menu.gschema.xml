@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="scaling-factor-menu@giacomoferretti.com">
+    <schema id="org.gnome.shell.extensions.scaling-factor-menu"
+        path="/org/gnome/shell/extensions/scaling-factor-menu/">
+        <key name="last-selected-text-scaling-factor" type="d">
+            <default>1</default>
+        </key>
+    </schema>
+</schemalist>
